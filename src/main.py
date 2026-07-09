@@ -16,6 +16,16 @@ class DailyReportResponse(BaseModel):
     reply: str
 
 
+class ChatRequest(BaseModel):
+    text: str = Field(..., min_length=1, max_length=5000)
+    user_id: str | None = None
+    source: str | None = "local"
+
+
+class ChatResponse(BaseModel):
+    reply: str
+
+
 def build_mock_daily_report(text: str) -> str:
 
     return f"""### 今日目标
