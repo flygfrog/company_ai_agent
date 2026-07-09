@@ -110,3 +110,51 @@ def daily_report(request: DailyReportRequest):
         reply = generate_daily_report(request.text)
 
     return DailyReportResponse(reply=reply)
+
+
+@app.post("/chat", response_model=ChatResponse)
+def chat(request: ChatRequest):
+    """
+    统一聊天入口。
+    后续钉钉机器人收到的消息可以统一转发到这里。
+    """
+
+    text = request.text.strip()
+
+    # 1. 简单问候
+    if text in ["你好", "您好", "hello", "Hello", "hi", "Hi"]:
+        return ChatResponse(
+            reply=(
+                "你好，我是公司 AI Agent 助手。\n\n"
+                "当前支持的功能：\n"
+                "发送“生成日报：今天完成了……”即可生成规范实习日报。"
+            )
+        )
+
+    # 2. 日报生成意图
+    daily_report_content = extract_daily_report_content(text)
+
+    if daily_report_content is not None:
+        if not daily_report_content:
+            return ChatResponse(
+                reply=(
+                    "请在“生成日报”后面输入今天的工作内容。\n\n"
+                    "示例：生成日报：今天配置了 OpenClaw，搭建了 FastAPI 后端，并测试了 DeepSeek API。"
+                )
+            )
+
+        if USE_MOCK_LLM:
+            reply = build_mock_daily_report(daily_report_content)
+        else:
+            reply = generate_daily_report(daily_report_content)
+
+        return ChatResponse(reply=reply)
+
+    # 3. 其他暂不支持的输入
+    return ChatResponse(
+        reply=(
+            "当前暂时支持日报生成功能。\n\n"
+            "你可以这样输入：\n"
+            "生成日报：今天完成了 OpenClaw 配置、FastAPI 后端搭建和 DeepSeek API 接入测试。"
+        )
+    )
