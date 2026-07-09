@@ -57,6 +57,35 @@ def build_mock_daily_report(text: str) -> str:
 {text}
 """
 
+
+def extract_daily_report_content(text: str) -> str | None:
+    """
+    判断用户是否想生成日报。
+    如果是，返回去掉命令词后的工作内容。
+    如果不是，返回 None。
+    """
+
+    text = text.strip()
+
+    prefixes = [
+        "生成日报",
+        "日报",
+        "帮我生成日报",
+        "帮我写日报",
+        "整理日报",
+        "实习日报",
+        "生成实习日报",
+    ]
+
+    for prefix in prefixes:
+        if text.startswith(prefix):
+            content = text[len(prefix):].strip()
+            content = content.lstrip("：:，,。.\n ")
+            return content
+
+    return None
+
+
 @app.get("/")
 def root():
     return {
