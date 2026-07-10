@@ -1,0 +1,124 @@
+2026-07-10 14:21:10 | INFO | src.main | main.py:133 | 请求开始 | request_id=063434ab | method=GET | path=/docs
+2026-07-10 14:21:10 | INFO | src.main | main.py:145 | 请求结束 | request_id=063434ab | status_code=200 | duration_ms=0.84
+2026-07-10 14:21:10 | INFO | src.main | main.py:133 | 请求开始 | request_id=515012d0 | method=GET | path=/openapi.json
+2026-07-10 14:21:10 | INFO | src.main | main.py:145 | 请求结束 | request_id=515012d0 | status_code=200 | duration_ms=10.57
+2026-07-10 14:36:56 | INFO | src.main | main.py:133 | 请求开始 | request_id=55ebd9f1 | method=POST | path=/chat
+2026-07-10 14:36:56 | INFO | src.main | main.py:292 | 收到聊天请求 | source=local | input_length=2
+2026-07-10 14:36:56 | INFO | src.main | main.py:299 | 聊天意图识别完成 | intent=greeting
+2026-07-10 14:36:56 | INFO | src.main | main.py:145 | 请求结束 | request_id=55ebd9f1 | status_code=200 | duration_ms=7.01
+2026-07-10 14:52:12 | INFO | src.main | main.py:133 | 请求开始 | request_id=75c27e82 | method=POST | path=/chat
+2026-07-10 14:52:12 | INFO | src.main | main.py:292 | 收到聊天请求 | source=local | input_length=36
+2026-07-10 14:52:12 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 14:52:12 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=31
+2026-07-10 14:52:12 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 14:52:16 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-07-10 14:52:18 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=221
+2026-07-10 14:52:18 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=221
+2026-07-10 14:52:18 | INFO | src.main | main.py:145 | 请求结束 | request_id=75c27e82 | status_code=200 | duration_ms=5844.76
+2026-07-10 14:59:04 | INFO | src.main | main.py:133 | 请求开始 | request_id=0657ea88 | method=POST | path=/chat
+2026-07-10 14:59:04 | INFO | src.main | main.py:292 | 收到聊天请求 | source=local | input_length=25
+2026-07-10 14:59:04 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 14:59:04 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=19
+2026-07-10 14:59:04 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 14:59:05 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-07-10 14:59:06 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=164
+2026-07-10 14:59:06 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=164
+2026-07-10 14:59:06 | INFO | src.main | main.py:145 | 请求结束 | request_id=0657ea88 | status_code=200 | duration_ms=2221.73
+2026-07-10 15:02:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=405ff0f9 | method=GET | path=/docs
+2026-07-10 15:02:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=405ff0f9 | status_code=200 | duration_ms=0.84
+2026-07-10 15:02:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=59ce9e05 | method=GET | path=/openapi.json
+2026-07-10 15:02:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=59ce9e05 | status_code=200 | duration_ms=0.84
+2026-07-10 15:18:37 | INFO | src.main | main.py:133 | 请求开始 | request_id=442d5471 | method=POST | path=/chat
+2026-07-10 15:18:37 | WARNING | src.main | main.py:171 | 业务异常 | request_id=442d5471 | path=/chat | code=EMPTY_INPUT | message=聊天消息不能为空
+2026-07-10 15:18:37 | INFO | src.main | main.py:145 | 请求结束 | request_id=442d5471 | status_code=400 | duration_ms=8.37
+2026-07-10 15:19:11 | INFO | src.main | main.py:133 | 请求开始 | request_id=7410c68c | method=POST | path=/chat
+2026-07-10 15:19:11 | WARNING | src.main | main.py:202 | 参数校验失败 | request_id=7410c68c | path=/chat | errors=[{'type': 'string_too_short', 'loc': ['body', 'text'], 'msg': 'String should have at least 1 character', 'input': '', 'ctx': {'min_length': 1}}]
+2026-07-10 15:19:11 | INFO | src.main | main.py:145 | 请求结束 | request_id=7410c68c | status_code=422 | duration_ms=2.44
+2026-07-10 15:19:30 | INFO | src.main | main.py:133 | 请求开始 | request_id=815ca1d5 | method=POST | path=/chat
+2026-07-10 15:19:30 | WARNING | src.main | main.py:202 | 参数校验失败 | request_id=815ca1d5 | path=/chat | errors=[{'type': 'missing', 'loc': ['body', 'text'], 'msg': 'Field required', 'input': {'user_id': 'test_user_009', 'source': 'local'}}]
+2026-07-10 15:19:30 | INFO | src.main | main.py:145 | 请求结束 | request_id=815ca1d5 | status_code=422 | duration_ms=2.87
+2026-07-10 15:19:52 | INFO | src.main | main.py:133 | 请求开始 | request_id=1f1f13e1 | method=POST | path=/chat
+2026-07-10 15:19:52 | WARNING | src.main | main.py:202 | 参数校验失败 | request_id=1f1f13e1 | path=/chat | errors=[{'type': 'missing', 'loc': ['body', 'text'], 'msg': 'Field required', 'input': {'message': '你好', 'user_id': 'test_user_010', 'source': 'local'}}]
+2026-07-10 15:19:52 | INFO | src.main | main.py:145 | 请求结束 | request_id=1f1f13e1 | status_code=422 | duration_ms=1.68
+2026-07-10 15:20:10 | INFO | src.main | main.py:133 | 请求开始 | request_id=12a53a61 | method=POST | path=/chat
+2026-07-10 15:20:10 | INFO | src.main | main.py:292 | 收到聊天请求 | source=local | input_length=8
+2026-07-10 15:20:10 | INFO | src.main | main.py:331 | 聊天意图识别完成 | intent=unknown
+2026-07-10 15:20:10 | INFO | src.main | main.py:145 | 请求结束 | request_id=12a53a61 | status_code=200 | duration_ms=3.47
+2026-07-10 15:20:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=90d31ee1 | method=POST | path=/chat
+2026-07-10 15:20:28 | INFO | src.main | main.py:292 | 收到聊天请求 | source=dingtalk | input_length=21
+2026-07-10 15:20:28 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 15:20:28 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=16
+2026-07-10 15:20:28 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 15:20:29 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-07-10 15:20:31 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=207
+2026-07-10 15:20:31 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=207
+2026-07-10 15:20:31 | INFO | src.main | main.py:145 | 请求结束 | request_id=90d31ee1 | status_code=200 | duration_ms=2621.18
+2026-07-10 15:22:42 | INFO | src.main | main.py:133 | 请求开始 | request_id=96cd7b99 | method=POST | path=/chat
+2026-07-10 15:22:42 | INFO | src.main | main.py:292 | 收到聊天请求 | source=local | input_length=18
+2026-07-10 15:22:42 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 15:22:42 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=13
+2026-07-10 15:22:42 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 15:22:43 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-07-10 15:22:44 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=163
+2026-07-10 15:22:44 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=163
+2026-07-10 15:22:44 | INFO | src.main | main.py:145 | 请求结束 | request_id=96cd7b99 | status_code=200 | duration_ms=2223.90
+2026-07-10 15:29:53 | INFO | src.main | main.py:133 | 请求开始 | request_id=2be50a92 | method=GET | path=/docs
+2026-07-10 15:29:53 | INFO | src.main | main.py:145 | 请求结束 | request_id=2be50a92 | status_code=200 | duration_ms=0.90
+2026-07-10 15:29:53 | INFO | src.main | main.py:133 | 请求开始 | request_id=fd61c63b | method=GET | path=/openapi.json
+2026-07-10 15:29:53 | INFO | src.main | main.py:145 | 请求结束 | request_id=fd61c63b | status_code=200 | duration_ms=8.90
+2026-07-10 15:30:14 | INFO | src.main | main.py:133 | 请求开始 | request_id=53ce1a95 | method=POST | path=/chat
+2026-07-10 15:30:14 | INFO | src.main | main.py:292 | 收到聊天请求 | source=local | input_length=18
+2026-07-10 15:30:14 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 15:30:14 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=13
+2026-07-10 15:30:14 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 15:30:15 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 401 Authorization Required"
+2026-07-10 15:30:15 | ERROR | src.llm_client | llm_client.py:78 | DeepSeek API 调用失败 | model=deepseek-v4-flash
+Traceback (most recent call last):
+  File "C:\Users\Yoltech\OneDrive\1-File\2_实习\尧唐\company_ai_agent\src\llm_client.py", line 48, in call_deepseek
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yoltech\OneDrive\1-File\2_实习\尧唐\company_ai_agent\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yoltech\OneDrive\1-File\2_实习\尧唐\company_ai_agent\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1251, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\Yoltech\OneDrive\1-File\2_实习\尧唐\company_ai_agent\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yoltech\OneDrive\1-File\2_实习\尧唐\company_ai_agent\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Authentication Fails, Your api key: ****8cb9 is invalid', 'type': 'authentication_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-07-10 15:30:15 | WARNING | src.main | main.py:171 | 业务异常 | request_id=53ce1a95 | path=/chat | code=LLM_SERVICE_ERROR | message=大模型服务暂时不可用，请稍后重试
+2026-07-10 15:30:15 | INFO | src.main | main.py:145 | 请求结束 | request_id=53ce1a95 | status_code=502 | duration_ms=1492.76
+2026-07-10 15:35:18 | INFO | src.main | main.py:133 | 请求开始 | request_id=dd65bb9e | method=POST | path=/chat
+2026-07-10 15:35:18 | INFO | src.main | main.py:292 | 收到聊天请求 | source=openclaw | input_length=31
+2026-07-10 15:35:18 | INFO | src.main | main.py:331 | 聊天意图识别完成 | intent=unknown
+2026-07-10 15:35:18 | INFO | src.main | main.py:145 | 请求结束 | request_id=dd65bb9e | status_code=200 | duration_ms=6.17
+2026-07-10 15:44:36 | INFO | src.main | main.py:133 | 请求开始 | request_id=ecc2397c | method=POST | path=/chat
+2026-07-10 15:44:36 | INFO | src.main | main.py:292 | 收到聊天请求 | source=openclaw | input_length=37
+2026-07-10 15:44:36 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 15:44:36 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=32
+2026-07-10 15:44:36 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 15:44:37 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-07-10 15:44:38 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=189
+2026-07-10 15:44:38 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=189
+2026-07-10 15:44:38 | INFO | src.main | main.py:145 | 请求结束 | request_id=ecc2397c | status_code=200 | duration_ms=2564.27
+2026-07-10 16:07:53 | INFO | src.main | main.py:133 | 请求开始 | request_id=bcdb7c8f | method=POST | path=/chat
+2026-07-10 16:07:53 | INFO | src.main | main.py:292 | 收到聊天请求 | source=openclaw | input_length=47
+2026-07-10 16:07:53 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 16:07:53 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=42
+2026-07-10 16:07:53 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 16:07:54 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-07-10 16:07:56 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=243
+2026-07-10 16:07:56 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=243
+2026-07-10 16:07:56 | INFO | src.main | main.py:145 | 请求结束 | request_id=bcdb7c8f | status_code=200 | duration_ms=2555.71
+2026-07-10 16:20:16 | INFO | src.main | main.py:133 | 请求开始 | request_id=90d7b1b9 | method=POST | path=/chat
+2026-07-10 16:20:16 | INFO | src.main | main.py:292 | 收到聊天请求 | source=openclaw | input_length=60
+2026-07-10 16:20:16 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 16:20:16 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=55
+2026-07-10 16:20:16 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 16:20:18 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-07-10 16:20:19 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=306
+2026-07-10 16:20:19 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=306
+2026-07-10 16:20:19 | INFO | src.main | main.py:145 | 请求结束 | request_id=90d7b1b9 | status_code=200 | duration_ms=2829.87
