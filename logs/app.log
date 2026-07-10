@@ -122,3 +122,12 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Authenticat
 2026-07-10 16:20:19 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=306
 2026-07-10 16:20:19 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=306
 2026-07-10 16:20:19 | INFO | src.main | main.py:145 | 请求结束 | request_id=90d7b1b9 | status_code=200 | duration_ms=2829.87
+2026-07-10 16:40:53 | INFO | src.main | main.py:133 | 请求开始 | request_id=4634bf6d | method=POST | path=/chat
+2026-07-10 16:40:53 | INFO | src.main | main.py:292 | 收到聊天请求 | source=openclaw | input_length=73
+2026-07-10 16:40:53 | INFO | src.main | main.py:312 | 聊天意图识别完成 | intent=daily_report
+2026-07-10 16:40:53 | INFO | src.agent | agent.py:54 | 开始生成日报 | input_length=68
+2026-07-10 16:40:53 | INFO | src.llm_client | llm_client.py:36 | 开始调用 DeepSeek API | model=deepseek-v4-flash | message_count=2
+2026-07-10 16:40:54 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2026-07-10 16:40:56 | INFO | src.llm_client | llm_client.py:65 | DeepSeek API 调用成功 | response_length=269
+2026-07-10 16:40:56 | INFO | src.agent | agent.py:72 | 日报生成完成 | output_length=269
+2026-07-10 16:40:56 | INFO | src.main | main.py:145 | 请求结束 | request_id=4634bf6d | status_code=200 | duration_ms=2662.33
