@@ -261,6 +261,15 @@ def health_check():
     }
 
 
+@app.get("/version")
+def get_version():
+    return {
+        "version": app.version,
+        "service": APP_NAME,
+        "mock_llm": USE_MOCK_LLM,
+    }
+
+
 @app.post("/daily-report", response_model=DailyReportResponse)
 def daily_report(request: DailyReportRequest):
     text = validate_text(request.text, "工作内容")
