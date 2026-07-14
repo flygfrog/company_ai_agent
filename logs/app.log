@@ -197,3 +197,87 @@ openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Authenticat
 2026-07-14 09:41:43 | INFO | src.main | main.py:145 | 请求结束 | request_id=cfefd4ad | status_code=200 | duration_ms=1.98
 2026-07-14 09:41:43 | INFO | src.main | main.py:133 | 请求开始 | request_id=9d2407f8 | method=GET | path=/openapi.json
 2026-07-14 09:41:43 | INFO | src.main | main.py:145 | 请求结束 | request_id=9d2407f8 | status_code=200 | duration_ms=9.07
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=de6c9f1d | method=POST | path=/chat
+2026-07-14 14:16:28 | INFO | src.main | main.py:301 | 收到聊天请求 | source=pytest | input_length=2
+2026-07-14 14:16:28 | INFO | src.main | main.py:308 | 聊天意图识别完成 | intent=greeting
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=de6c9f1d | status_code=200 | duration_ms=6.56
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=2d73c10b | method=POST | path=/chat
+2026-07-14 14:16:28 | INFO | src.main | main.py:301 | 收到聊天请求 | source=pytest | input_length=24
+2026-07-14 14:16:28 | INFO | src.main | main.py:321 | 聊天意图识别完成 | intent=daily_report
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=2d73c10b | status_code=200 | duration_ms=2.16
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=667f94fe | method=POST | path=/chat
+2026-07-14 14:16:28 | INFO | src.main | main.py:301 | 收到聊天请求 | source=pytest | input_length=4
+2026-07-14 14:16:28 | INFO | src.main | main.py:321 | 聊天意图识别完成 | intent=daily_report
+2026-07-14 14:16:28 | WARNING | src.main | main.py:171 | 业务异常 | request_id=667f94fe | path=/chat | code=MISSING_DAILY_REPORT_CONTENT | message=请在“生成日报”后面输入今天的工作内容。示例：生成日报：今天搭建了 FastAPI 后端。
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=667f94fe | status_code=400 | duration_ms=2.12
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/chat "HTTP/1.1 400 Bad Request"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=c46a6c22 | method=POST | path=/chat
+2026-07-14 14:16:28 | INFO | src.main | main.py:301 | 收到聊天请求 | source=pytest | input_length=9
+2026-07-14 14:16:28 | INFO | src.main | main.py:340 | 聊天意图识别完成 | intent=unknown
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=c46a6c22 | status_code=200 | duration_ms=2.29
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=9ea01b66 | method=POST | path=/daily-report
+2026-07-14 14:16:28 | INFO | src.main | main.py:277 | 收到日报生成请求 | mode=mock | input_length=40
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=9ea01b66 | status_code=200 | duration_ms=1.63
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/daily-report "HTTP/1.1 200 OK"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=77bbeb1f | method=POST | path=/daily-report
+2026-07-14 14:16:28 | WARNING | src.main | main.py:171 | 业务异常 | request_id=77bbeb1f | path=/daily-report | code=EMPTY_INPUT | message=工作内容不能为空
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=77bbeb1f | status_code=400 | duration_ms=18.62
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/daily-report "HTTP/1.1 400 Bad Request"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=8b5c0565 | method=POST | path=/daily-report
+2026-07-14 14:16:28 | WARNING | src.main | main.py:202 | 参数校验失败 | request_id=8b5c0565 | path=/daily-report | errors=[{'type': 'missing', 'loc': ['body', 'text'], 'msg': 'Field required', 'input': {}}]
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=8b5c0565 | status_code=422 | duration_ms=1.56
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/daily-report "HTTP/1.1 422 Unprocessable Entity"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=cf5c957b | method=GET | path=/
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=cf5c957b | status_code=200 | duration_ms=1.08
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=0fe5830a | method=GET | path=/health
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=0fe5830a | status_code=200 | duration_ms=0.87
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-14 14:16:28 | INFO | src.main | main.py:133 | 请求开始 | request_id=b37c1e11 | method=GET | path=/version
+2026-07-14 14:16:28 | INFO | src.main | main.py:145 | 请求结束 | request_id=b37c1e11 | status_code=200 | duration_ms=0.86
+2026-07-14 14:16:28 | INFO | httpx | _client.py:1025 | HTTP Request: GET http://testserver/version "HTTP/1.1 200 OK"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=418c7bcc | method=POST | path=/chat
+2026-07-14 14:20:39 | INFO | src.main | main.py:301 | 收到聊天请求 | source=pytest | input_length=2
+2026-07-14 14:20:39 | INFO | src.main | main.py:308 | 聊天意图识别完成 | intent=greeting
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=418c7bcc | status_code=200 | duration_ms=6.05
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=a211e36e | method=POST | path=/chat
+2026-07-14 14:20:39 | INFO | src.main | main.py:301 | 收到聊天请求 | source=pytest | input_length=24
+2026-07-14 14:20:39 | INFO | src.main | main.py:321 | 聊天意图识别完成 | intent=daily_report
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=a211e36e | status_code=200 | duration_ms=1.59
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=4a214653 | method=POST | path=/chat
+2026-07-14 14:20:39 | INFO | src.main | main.py:301 | 收到聊天请求 | source=pytest | input_length=4
+2026-07-14 14:20:39 | INFO | src.main | main.py:321 | 聊天意图识别完成 | intent=daily_report
+2026-07-14 14:20:39 | WARNING | src.main | main.py:171 | 业务异常 | request_id=4a214653 | path=/chat | code=MISSING_DAILY_REPORT_CONTENT | message=请在“生成日报”后面输入今天的工作内容。示例：生成日报：今天搭建了 FastAPI 后端。
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=4a214653 | status_code=400 | duration_ms=1.68
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/chat "HTTP/1.1 400 Bad Request"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=4d6c26d7 | method=POST | path=/chat
+2026-07-14 14:20:39 | INFO | src.main | main.py:301 | 收到聊天请求 | source=pytest | input_length=9
+2026-07-14 14:20:39 | INFO | src.main | main.py:340 | 聊天意图识别完成 | intent=unknown
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=4d6c26d7 | status_code=200 | duration_ms=2.34
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/chat "HTTP/1.1 200 OK"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=effbf1ff | method=POST | path=/daily-report
+2026-07-14 14:20:39 | INFO | src.main | main.py:277 | 收到日报生成请求 | mode=mock | input_length=40
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=effbf1ff | status_code=200 | duration_ms=1.81
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/daily-report "HTTP/1.1 200 OK"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=e57ed34e | method=POST | path=/daily-report
+2026-07-14 14:20:39 | WARNING | src.main | main.py:171 | 业务异常 | request_id=e57ed34e | path=/daily-report | code=EMPTY_INPUT | message=工作内容不能为空
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=e57ed34e | status_code=400 | duration_ms=1.20
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/daily-report "HTTP/1.1 400 Bad Request"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=75bc0c13 | method=POST | path=/daily-report
+2026-07-14 14:20:39 | WARNING | src.main | main.py:202 | 参数校验失败 | request_id=75bc0c13 | path=/daily-report | errors=[{'type': 'missing', 'loc': ['body', 'text'], 'msg': 'Field required', 'input': {}}]
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=75bc0c13 | status_code=422 | duration_ms=1.01
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: POST http://testserver/daily-report "HTTP/1.1 422 Unprocessable Entity"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=14a28248 | method=GET | path=/
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=14a28248 | status_code=200 | duration_ms=1.15
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: GET http://testserver/ "HTTP/1.1 200 OK"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=efd45017 | method=GET | path=/health
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=efd45017 | status_code=200 | duration_ms=1.06
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-07-14 14:20:39 | INFO | src.main | main.py:133 | 请求开始 | request_id=08e789f1 | method=GET | path=/version
+2026-07-14 14:20:39 | INFO | src.main | main.py:145 | 请求结束 | request_id=08e789f1 | status_code=200 | duration_ms=1.18
+2026-07-14 14:20:39 | INFO | httpx | _client.py:1025 | HTTP Request: GET http://testserver/version "HTTP/1.1 200 OK"
